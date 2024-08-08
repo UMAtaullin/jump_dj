@@ -154,7 +154,6 @@ cython_debug/
 
 # PyCharm and VS code
 .idea/
-.vscode/
 .build/
 .pylintrc
 
