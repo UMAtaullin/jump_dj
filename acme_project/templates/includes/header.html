@@ -1,10 +1,21 @@
+{% load static %}
 <header>
-  <p>Место для логотипа</p>
   <nav>
-    Навигация
-    <a href="{% url "homepage:index" %}">Главная страница</a>
-    <a href="{% url "about:description" %}">Описание проекта</a>
-    <a href="{% url "ice_cream:list" %}">Список мороженого</a>
-    {% comment %} <a href="{% url "ice_cream:detail" 'ice_cream/(?P<pk>[0-9]+)/\\Z' %}">Подробное описание мороженого</a>  {% endcomment %}
+    <div class="container">
+      <div class="item main">
+        <a href="{% url "homepage:index" %}">Главная</a>
+      </div>
+      <div class="item ice_cream_list">
+        <a href="{% url "ice_cream:ice_cream_list" %}">Список мороженого</a>
+      </div>
+      <div class="item description">
+        <a href="{% url "about:description" %}">О проекте</a>
+      </div>
+      <div class="logo">
+        <a href="#">
+          <img src="https://gas-kvas.com/grafic/uploads/posts/2024-01/gas-kvas-com-p-logotip-pepsi-na-prozrachnom-fone-34.png" height="30" alt="Logo">
+        </a>
+      </div>
+    </div>
   </nav>
 </header>

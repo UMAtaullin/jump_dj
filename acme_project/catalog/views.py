@@ -1,8 +1,17 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def product_list(request):
-    return HttpResponse("Страница со списком товаров")
+    context = {
+        "products": [
+            "Iron carrot",
+            "Giant mousetrap",
+            "Dehydrated boulders",
+            "Invisible paint",
+        ]
+    }
+    return render(request, "catalog/block_content_rendered.html", context)
 
 
 def product_detail(request, pk):

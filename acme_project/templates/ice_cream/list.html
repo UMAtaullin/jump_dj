@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
   
 {% block title %}
   Анфиса для друзей. Список мороженого
@@ -6,5 +7,15 @@
 
 {% block content %}
   <h1>Каталог мороженого</h1>
+  <ul>
+    {% for i in ice_cream %}
+      <li>
+        <h3>{{i.title}}</h3>
+        <p>{{i.description|truncatewords:10}}</p>
+        <a href="{% url "ice_cream:ice_cream_detail" i.id %}">Подробнее</a>    
+      </li>
+      {% if not forloop.last %}<hr>{% endif %}
+    {% endfor %}
+  </ul>
 {% endblock content %}
 
